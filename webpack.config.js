@@ -41,11 +41,8 @@ module.exports = {
         rules: [
             { test: /\.svg$/, use: 'svg-inline-loader' },
             {
-                test: /\.css$/i,
-                loader: "css-loader",
-                options: {
-                  url: true,
-                },
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader'],
             },
             { test: /\.(js)$/, use: 'babel-loader' },
             {
