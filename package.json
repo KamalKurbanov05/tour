@@ -4,6 +4,7 @@
   "description": "",
   "private": true,
   "scripts": {
+    "deploy": "npm run build && gh-pages -d dist",
     "build": "webpack --mode production",
     "dev": "webpack --mode development",
     "start": "webpack-dev-server --mode development --open",
@@ -16,7 +17,9 @@
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.7.3",
     "file-loader": "^6.2.0",
+    "gh-pages": "^5.0.0",
     "html-webpack-plugin": "^5.5.0",
+    "push-dir": "^0.4.1",
     "style-loader": "^3.3.1",
     "svg-inline-loader": "^0.8.2",
     "webpack": "^5.75.0",
