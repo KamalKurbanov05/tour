@@ -25,9 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-    previous.style.backgroundImage = `url("../image/right-arrow.svg")`;
-    next.style.backgroundImage = `url("../image/left-arrow.svg")`;
-    montainBg.style.backgroundImage = `url("../image/mountain_bg.jpg")`;
+    previous.style.backgroundImage = `url("./image/right-arrow.svg")`;
+    next.style.backgroundImage = `url("./image/left-arrow.svg")`;
+    montainBg.style.backgroundImage = `url("./image/mountain_bg.jpg")`;
     imgBg.style.backgroundImage = `url(./image/dagestanskii-kanon-sulakskii.jpg)`;
 
 });
