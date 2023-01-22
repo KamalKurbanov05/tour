@@ -1,6 +1,7 @@
 const path = require('path');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyPlugin = require("copy-webpack-plugin");
 const { dirname } = require('path');
 
 module.exports = {
@@ -19,7 +20,6 @@ module.exports = {
             directory: path.join(__dirname, 'src'),
         },
         port: 9000,
-
     },
     resolve: {
         extensions: ['.js', '.css', '.png'],
@@ -28,8 +28,25 @@ module.exports = {
             "@css": path.resolve(__dirname, "src/css")
         }
     },
-
     plugins: [
+        new CopyPlugin({
+            patterns: [
+                {
+                    from:  path.resolve(__dirname, "src/"),
+                    to:  path.resolve(__dirname, "dist"),
+                    // force: true,
+                    globOptions: {
+                        dot: true,
+                        gitignore: true,
+                        ignore: ["**/file.*", "**/ignored-directory/**", "**/*index.html","**/*index.js", "**/*test.js", "**/fonts", "**/css", "**/js"],
+                      },
+                  },
+                //   {
+                //     from:  path.resolve(__dirname, "src/image"),
+                //     to:  path.resolve(__dirname, "dist"),
+                //   },
+            ],
+          }),
         new HTMLWebpackPlugin(
             {
                 template: './index.html',
